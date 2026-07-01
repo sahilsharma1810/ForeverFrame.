@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ForeverFrame ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+</head>
+
+<body>
+
+  
+    <!-- Background -->
+    <div class="background"></div>
+  
+  <div class="bg-blur blur1"></div>
+<div class="bg-blur blur2"></div>
+<div class="bg-blur blur3"></div>
+
+    <!-- Floating Hearts -->
+    <div class="hearts"></div>
+  <div class="stars"></div>
+
+    <!-- Main Card -->
+  
+  <div id="homePage">
+    
+    <div class="container">
+
+        <div class="logo">
+            🖼️❤️
+        </div>
+
+        <h1>ForeverFrame</h1>
+
+        <p class="tagline">
+            Because Every Memory Deserves Forever.
+        </p>
+      
+      <button class="primary-btn" id="createBtn">
+    ❤️ Create My Surprise
+      </button>
+
+      <button class="secondary-btn" id="watchDemoBtn">
+    👀 Watch Demo
+      </button>
+
+        <p class="login">
+            Already have an account?
+            <span>Login</span>
+        </p>
+
+    </div>
+    
+    </div>
+  <div id="step1Page" style="display:none;">
+
+    <button class="back-btn" id="backToHome">
+⬅ Back
+    </button>
+    
+    <div class="container">
+
+        <h2>Create Your Surprise ❤️</h2>
+      <label>Your Name</label>
+
+<input type="text" id="yourName" placeholder="Enter your name">
+
+      <label>Receiver Name</label>
+
+<input type="text" id="receiverName" placeholder="Enter receiver's name">
+
+      <label>Nickname</label>
+
+<input type="text" id="nickname" placeholder="Enter nickname">
+
+      <label>Occasion</label>
+
+<select id="occasion">
+    <option>Birthday</option>
+    <option>Anniversary</option>
+    <option>Proposal</option>
+    <option>Family</option>
+    <option>Friend</option>
+</select>
+
+        <button id="continueBtn" class="primary-btn">
+            Continue ❤️
+        </button>
+
+    </div>
+
+  </div>
+
+  <div id="photoPage" style="display:none;">
+
+    <button class="back-btn" id="backToStep1">
+⬅ Back
+    </button>
+    
+    <div class="container">
+
+        <h2>Upload Your Memories</h2>
+
+<p>You can upload up to 6 photos.</p>
+
+<div id="photoContainer"></div>
+
+<button class="primary-btn" id="photocontinueBtn">
+Continue ❤️
+</button>
+
+    </div>
+
+  </div>
+
+  <div id="demoSelectPage" style="display:none;">
+    
+<button class="back-btn" id="backToHomeDemo">
+⬅ Back
+</button>
+    
+    <div class="container">
+
+        <div class="logo">❤️</div>
+
+        <h2>Choose Your Experience</h2>
+
+        <p class="tagline">
+            Watch a live preview before creating your surprise.
+        </p>
+
+        <div class="plan-card basic-card">
+            <h3>💖 Basic Plan</h3>
+            <p>Beautiful memories with everything you need.</p>
+
+            <button id="basicDemoBtn" class="primary-btn">
+                ▶ Watch Basic Demo
+            </button>
+        </div>
+
+        <div class="plan-card premium-card">
+            <div class="premium-badge">👑 Best Value</div>
+
+            <h3>✨ Premium Plan</h3>
+
+            <p>Everything in Basic + more magical features.</p>
+
+            <button id="premiumDemoBtn" class="primary-btn">
+                ▶ Watch Premium Demo
+            </button>
+        </div>
+
+        <button id="demoBackBtn" class="secondary-btn">
+            ⬅ Back
+        </button>
+
+  </div>
+  
+</div>
+
+  <div id="basicDemoPage" style="display:none;">
+
+    <button class="back-btn" id="backToDemoSelect">
+        ⬅ Back
+    </button>
+
+    <div class="container">
+
+        <div class="logo">❤️</div>
+
+        <h1 class="demo-title">ForeverFrame</h1>
+
+        <h2 class="demo-heading">
+            A ForeverFrame Has Been Created For You... ❤️
+        </h2>
+
+        <p class="demo-text">
+            Someone took the time to turn beautiful memories into something you'll never forget.
+        </p>
+
+        <p class="demo-text">
+            Every photo, every word, every promise and every little surprise inside this gift was chosen especially for you.
+        </p>
+
+        <p class="demo-highlight">
+            This isn't just a surprise... it's a memory you'll want to revisit again and again. ❤️
+        </p>
+
+        <p class="demo-note">
+            ✨ Take a deep breath, turn up the volume, and enjoy every moment.
+        </p>
+
+        <button class="primary-btn" id="openSurpriseBtn">
+            💖 Open My Surprise
+        </button>
+
+    </div>
+
+  </div>
+  <div id="journeyPage" style="display:none;">
+
+    <button class="back-btn" id="backToIntro">
+        ⬅ Back
+    </button>
+
+    <div class="container">
+
+        <div class="logo">✨</div>
+
+      <h2 class="fade-up fade1">Your Journey Begins Here ❤️</h2>
+
+        <p class="demo-text fade-up fade2">Every memory has a story.</p>
+
+<p class="demo-text fade-up fade3">Some stories make us smile.</p>
+
+<p class="demo-text fade-up fade4">Some make us laugh.</p>
+
+<p class="demo-text fade-up fade5">Some stay in our hearts forever.</p>
+
+      <p class="demo-highlight fade-up fade6">
+Today... you're about to relive a few of those beautiful moments. ❤️
+      </p>
+
+        <button class="primary-btn" id="beginMemoriesBtn">
+            💖 Begin The Memories
+        </button>
+
+    </div>
+
+  </div>
+ <div id="memoryPage" style="display:none;">
+
+    <button class="back-btn" id="backToJourney">
+        ⬅ Back
+    </button>
+
+    <div class="container">
+<div class="slider">
+    <img id="memoryImage" class="memory-photo" src="">
+</div>
+        
+        <h3 id="memoryCount">
+            Memory 1 of 6 ❤️
+        </h3>
+
+        <p id="memoryCaption">
+            Every picture tells a beautiful story.
+        </p>
+
+        <p class="swipeHint">
+            👈 Swipe left to continue
+        </p>
+
+    </div>
+
+ </div>
+
+<script src="script.js"></script>
+
+<script src="memory-slider.js"></script>
+
+</body>
+</html>
