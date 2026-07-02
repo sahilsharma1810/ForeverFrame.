@@ -676,3 +676,34 @@ font-size:18px;
     color:#ffd7ef;
     text-align:center;
 }
+.envelope{
+
+font-size:75px;
+
+margin-bottom:20px;
+
+animation:floatEnvelope 2s ease-in-out infinite;
+
+}
+
+@keyframes floatEnvelope{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0);}
+
+}
+
+.letter-text{
+
+color:white;
+
+font-size:19px;
+
+line-height:2;
+
+margin:25px 0;
+
+animation:fadeUp 1s ease;
+
+}
