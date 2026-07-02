@@ -300,3 +300,22 @@ memoryImage.addEventListener("touchend", (e) => {
     }
 
 });
+const letterPage = document.getElementById("letterPage");
+
+document.getElementById("openLetterBtn")
+.addEventListener("click",()=>{
+
+memoryPage.style.display="none";
+
+letterPage.style.display="flex";
+
+});
+
+document.getElementById("backToMemory")
+.addEventListener("click",()=>{
+
+letterPage.style.display="none";
+
+memoryPage.style.display="flex";
+
+});
