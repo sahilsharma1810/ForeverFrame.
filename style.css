@@ -707,3 +707,12 @@ margin:25px 0;
 animation:fadeUp 1s ease;
 
 }
+.envelope{
+cursor:pointer;
+transition:.5s;
+}
+
+.envelope.open{
+transform:scale(1.3) rotate(12deg);
+opacity:.2;
+}
