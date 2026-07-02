@@ -100,7 +100,10 @@ btn.addEventListener("click", () => {
     }, 10);
 });
 const homePage = document.getElementById("homePage");
+
 const step1Page = document.getElementById("step1Page");
+
+const photoPage = document.getElementById("photoPage");
 
 document.getElementById("createBtn").addEventListener("click", () => {
 
