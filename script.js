@@ -369,6 +369,7 @@ document.getElementById("backToMemory")
     memoryPage.style.display="flex";
 
 });
+typeLetter();
 const fullLetter = `
 
 Some people enter our lives...
