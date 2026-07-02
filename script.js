@@ -293,7 +293,14 @@ const demoPhotos = [
     "images/demo5.jpg",
     "images/demo6.jpg"
 ];
-
+const demoCaptions = [
+"Every story has a beautiful beginning... ❤️",
+"Every smile became a memory... 😊",
+"Some moments stay forever... ✨",
+"Distance never changed our bond... 💕",
+"The best memories were never planned... 🌸",
+"And this is only the beginning... ❤️"
+];
 let currentPhoto = 0;
 
 const memoryImage = document.getElementById("memoryImage");
@@ -309,6 +316,10 @@ function showPhoto() {
 
         memoryCount.innerHTML =
         `Memory ${currentPhoto + 1} of ${demoPhotos.length} ❤️`;
+
+document.getElementById("memoryCaption").innerHTML =
+demoCaptions[currentPhoto];
+
 const openLetterBtn = document.getElementById("openLetterBtn");
 
 if(currentPhoto === demoPhotos.length - 1){
