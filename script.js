@@ -227,10 +227,14 @@ basicDemoPage.style.display="flex";
 
 const memoryPage = document.getElementById("memoryPage");
 
+const bgMusic = document.getElementById("bgMusic");
+
 beginMemoriesBtn.addEventListener("click", () => {
 
     journeyPage.style.display = "none";
     memoryPage.style.display = "flex";
+
+    bgMusic.play();
 
 });
 
