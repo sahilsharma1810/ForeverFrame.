@@ -269,7 +269,17 @@ function showPhoto() {
 
         memoryCount.innerHTML =
         `Memory ${currentPhoto + 1} of ${demoPhotos.length} ❤️`;
+const openLetterBtn = document.getElementById("openLetterBtn");
 
+if(currentPhoto === demoPhotos.length - 1){
+
+    openLetterBtn.style.display = "block";
+
+}else{
+
+    openLetterBtn.style.display = "none";
+
+}
         memoryImage.style.opacity = "1";
 
     }, 150);
@@ -305,17 +315,17 @@ const letterPage = document.getElementById("letterPage");
 document.getElementById("openLetterBtn")
 .addEventListener("click",()=>{
 
-memoryPage.style.display="none";
+    memoryPage.style.display="none";
 
-letterPage.style.display="flex";
+    letterPage.style.display="flex";
 
 });
 
 document.getElementById("backToMemory")
 .addEventListener("click",()=>{
 
-letterPage.style.display="none";
+    letterPage.style.display="none";
 
-memoryPage.style.display="flex";
+    memoryPage.style.display="flex";
 
 });
