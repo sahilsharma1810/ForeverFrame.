@@ -369,6 +369,9 @@ document.getElementById("backToMemory")
     memoryPage.style.display="flex";
 
 });
+const envelope =
+document.getElementById("envelope");
+
 typeLetter();
 const fullLetter = `
 
@@ -411,3 +414,14 @@ clearInterval(typing);
 },35);
 
 }
+envelope.addEventListener("click",()=>{
+
+envelope.classList.add("open");
+
+setTimeout(()=>{
+
+typeLetter();
+
+},700);
+
+});
