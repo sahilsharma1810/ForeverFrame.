@@ -386,56 +386,12 @@ document.getElementById("backToMemory")
 const envelope =
 document.getElementById("envelope");
 
-typeLetter();
-const fullLetter = `
-
-Some people enter our lives...
-
-And change everything.
-
-Thank you for every smile.
-
-Thank you for every memory.
-
-Thank you for simply being you.
-
-No matter where life takes us...
-
-You'll always have a place inside my heart. ❤️
-
-`;
-
-function typeLetter(){
-
-const letter=document.getElementById("letterText");
-
-letter.innerHTML="";
-
-let i=0;
-
-const typing=setInterval(()=>{
-
-letter.innerHTML+=fullLetter.charAt(i);
-
-i++;
-
-if(i>=fullLetter.length){
-
-clearInterval(typing);
-
-}
-
-},35);
-
-}
 envelope.addEventListener("click",()=>{
 
-envelope.classList.add("open");
+    envelope.classList.add("open");
 
-setTimeout(()=>{
-
-typeLetter();
-
-},700);
+    setTimeout(()=>{
+        typeLetter();
+    },700);
 
 });
