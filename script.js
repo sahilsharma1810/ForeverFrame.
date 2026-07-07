@@ -1,44 +1,8 @@
-const fullLetter = `
+// ----------------------
+// HEARTS
+// ----------------------
 
-Some people enter our lives...
-
-And change everything.
-
-Thank you for every smile.
-
-Thank you for every memory.
-
-Thank you for simply being you.
-
-No matter where life takes us...
-
-You'll always have a place inside my heart. ❤️
-
-`;
-
-function typeLetter(){
-
-const letter=document.getElementById("letterText");
-
-letter.innerHTML="";
-
-let i=0;
-
-const typing=setInterval(()=>{
-
-letter.innerHTML+=fullLetter.charAt(i);
-
-i++;
-
-if(i>=fullLetter.length){
-
-clearInterval(typing);
-
-}
-
-},35);
-
-}const heartsContainer = document.querySelector(".hearts");
+const heartsContainer = document.querySelector(".hearts");
 
 function createHeart(){
 
@@ -63,6 +27,11 @@ heart.remove();
 }
 
 setInterval(createHeart,700);
+
+// ----------------------
+// STARS
+// ----------------------
+
 const starsContainer=document.querySelector(".stars");
 
 function createStar(){
@@ -90,46 +59,105 @@ star.remove();
 }
 
 setInterval(createStar,300);
-const btn = document.getElementById("createBtn");
 
-btn.addEventListener("click", () => {
-    btn.classList.remove("ripple");
+// ----------------------
+// PAGES
+// ----------------------
 
-    setTimeout(() => {
-        btn.classList.add("ripple");
-    }, 10);
+const homePage=document.getElementById("homePage");
+
+const step1Page=document.getElementById("step1Page");
+
+const photoPage=document.getElementById("photoPage");
+
+const demoSelectPage=document.getElementById("demoSelectPage");
+
+const basicDemoPage=document.getElementById("basicDemoPage");
+
+const journeyPage=document.getElementById("journeyPage");
+
+const memoryPage=document.getElementById("memoryPage");
+
+const letterPage=document.getElementById("letterPage");
+
+// ----------------------
+// HOME
+// ----------------------
+
+document.getElementById("createBtn")
+.addEventListener("click",()=>{
+
+homePage.style.display="none";
+
+step1Page.style.display="flex";
+
 });
-const homePage = document.getElementById("homePage");
 
-const step1Page = document.getElementById("step1Page");
+document.getElementById("watchDemoBtn")
+.addEventListener("click",()=>{
 
-const photoPage = document.getElementById("photoPage");
+homePage.style.display="none";
 
-document.getElementById("createBtn").addEventListener("click", () => {
-
-    homePage.style.display = "none";
-
-    step1Page.style.display = "flex";
+demoSelectPage.style.display="flex";
 
 });
-const continueBtn = document.getElementById("continueBtn");
 
-if (continueBtn) {
+// ----------------------
+// BACK
+// ----------------------
 
-    continueBtn.addEventListener("click", () => {
+document.getElementById("backToHome")
+.addEventListener("click",()=>{
 
-        step1Page.style.display = "none";
-        photoPage.style.display = "flex";
+step1Page.style.display="none";
 
-    });
+homePage.style.display="flex";
 
-}
+});
+
+document.getElementById("backToHomeDemo")
+.addEventListener("click",()=>{
+
+demoSelectPage.style.display="none";
+
+homePage.style.display="flex";
+
+});
+
+// ----------------------
+// STEP 1 -> PHOTO PAGE
+// ----------------------
+
+document.getElementById("continueBtn")
+.addEventListener("click",()=>{
+
+step1Page.style.display="none";
+
+photoPage.style.display="flex";
+
+});
+
+document.getElementById("backToStep1")
+.addEventListener("click",()=>{
+
+photoPage.style.display="none";
+
+step1Page.style.display="flex";
+
+});
+
+// ----------------------
+// PHOTO UPLOAD
+// ----------------------
 
 const maxPhotos = 6;
 const photoContainer = document.getElementById("photoContainer");
-for(let i=1; i<=maxPhotos; i++){
-photoContainer.innerHTML += `
 
+if(photoContainer){
+
+for(let i=1;i<=maxPhotos;i++){
+
+photoContainer.innerHTML += `
 <div class="upload-box">
 
 <label for="photo${i}" class="upload-card">
@@ -144,7 +172,9 @@ photoContainer.innerHTML += `
 JPG • PNG • JPEG
 </div>
 
-<div class="uploaded-badge" id="badge${i}" style="display:none;">
+<div class="uploaded-badge"
+id="badge${i}"
+style="display:none;">
 ✅ Uploaded
 </div>
 
@@ -157,98 +187,70 @@ accept="image/*"
 hidden>
 
 </div>
-
 `;
 
 }
-for(let i = 1; i <= maxPhotos; i++) {
 
-    const input = document.getElementById(`photo${i}`);
-    const preview = document.getElementById(`preview${i}`);
-    const uploadText = document.getElementById(`uploadText${i}`);
-    const badge = document.getElementById(`badge${i}`);
+for(let i=1;i<=maxPhotos;i++){
 
-    input.addEventListener("change", function() {
+const input=document.getElementById(`photo${i}`);
+const preview=document.getElementById(`preview${i}`);
+const uploadText=document.getElementById(`uploadText${i}`);
+const badge=document.getElementById(`badge${i}`);
 
-        const file = this.files[0];
-        if (!file) return;
+input.addEventListener("change",function(){
 
-        const reader = new FileReader();
+const file=this.files[0];
 
-        reader.onload = function(e) {
-            preview.src = e.target.result;
-            preview.style.display = "block";
-            uploadText.style.display = "none";
-            badge.style.display = "block";
-        };
+if(!file) return;
 
-        reader.readAsDataURL(file);
-    });
+const reader=new FileReader();
+
+reader.onload=function(e){
+
+preview.src=e.target.result;
+
+preview.style.display="block";
+
+uploadText.style.display="none";
+
+badge.style.display="block";
+
+};
+
+reader.readAsDataURL(file);
+
+});
 
 }
-const watchDemoBtn = document.getElementById("watchDemoBtn");
 
-const demoSelectPage = document.getElementById("demoSelectPage");
+}
 
-const demoBackBtn = document.getElementById("demoBackBtn");
+// ----------------------
+// DEMO PAGE
+// ----------------------
 
-watchDemoBtn.addEventListener("click",()=>{
+document.getElementById("basicDemoBtn")
+.addEventListener("click",()=>{
 
-homePage.style.display="none";
+demoSelectPage.style.display="none";
+
+basicDemoPage.style.display="flex";
+
+});
+
+document.getElementById("backToDemoSelect")
+.addEventListener("click",()=>{
+
+basicDemoPage.style.display="none";
 
 demoSelectPage.style.display="flex";
 
 });
 
-demoBackBtn.addEventListener("click",()=>{
-
-demoSelectPage.style.display="none";
-
-homePage.style.display="flex";
-
-});
-document.getElementById("backToHome").addEventListener("click", () => {
-
-    step1Page.style.display = "none";
-    homePage.style.display = "flex";
-
-});
-document.getElementById("backToStep1").addEventListener("click", () => {
-
-    photoPage.style.display = "none";
-    step1Page.style.display = "flex";
-
-});
-document.getElementById("backToHomeDemo").addEventListener("click", () => {
-
-    demoSelectPage.style.display = "none";
-    homePage.style.display = "flex";
-
-});
-document.getElementById("backToHome").onclick = function () {
-};
-
-document.getElementById("backToStep1").onclick = function () {
-};
-
-document.getElementById("backToHomeDemo").onclick = function () {
-};
-const basicDemoBtn = document.getElementById("basicDemoBtn");
-const basicDemoPage = document.getElementById("basicDemoPage");
-
-basicDemoBtn.addEventListener("click", () => {
-    demoSelectPage.style.display = "none";
-    basicDemoPage.style.display = "flex";
-});
-
-document.getElementById("backToDemoSelect").addEventListener("click", () => {
-    basicDemoPage.style.display = "none";
-    demoSelectPage.style.display = "flex";
-});
-const journeyPage = document.getElementById("journeyPage");
-
-const beginMemoriesBtn =
-document.getElementById("beginMemoriesBtn");
+// ----------------------
+// JOURNEY
+// ----------------------
 
 document.getElementById("openSurpriseBtn")
 .addEventListener("click",()=>{
@@ -268,34 +270,21 @@ basicDemoPage.style.display="flex";
 
 });
 
-const memoryPage = document.getElementById("memoryPage");
+// ----------------------
+// MEMORY PAGE
+// ----------------------
 
 const bgMusic = document.getElementById("bgMusic");
 
-beginMemoriesBtn.addEventListener("click", () => {
-
-    journeyPage.style.display = "none";
-    memoryPage.style.display = "flex";
-
-    bgMusic.play();
-
-});
-
-document.getElementById("backToJourney").addEventListener("click", () => {
-
-    memoryPage.style.display = "none";
-    journeyPage.style.display = "flex";
-
-});
-
 const demoPhotos = [
-    "images/demo1.jpg",
-    "images/demo2.jpg",
-    "images/demo3.jpg",
-    "images/demo4.jpg",
-    "images/demo5.jpg",
-    "images/demo6.jpg"
+"images/demo1.jpg",
+"images/demo2.jpg",
+"images/demo3.jpg",
+"images/demo4.jpg",
+"images/demo5.jpg",
+"images/demo6.jpg"
 ];
+
 const demoCaptions = [
 "Every story has a beautiful beginning... ❤️",
 "Every smile became a memory... 😊",
@@ -304,67 +293,163 @@ const demoCaptions = [
 "The best memories were never planned... 🌸",
 "And this is only the beginning... ❤️"
 ];
+
 let currentPhoto = 0;
 
-const memoryImage = document.getElementById("memoryImage");
-const memoryCount = document.getElementById("memoryCount");
+const memoryImage =
+document.getElementById("memoryImage");
 
-function showPhoto() {
+const memoryCount =
+document.getElementById("memoryCount");
 
-    memoryImage.style.opacity = "0";
+const memoryCaption =
+document.getElementById("memoryCaption");
 
-    setTimeout(() => {
+const openLetterBtn =
+document.getElementById("openLetterBtn");
 
-        memoryImage.src = demoPhotos[currentPhoto];
+// ----------------------
+// BEGIN MEMORIES
+// ----------------------
 
-        memoryCount.innerHTML =
-        `Memory ${currentPhoto + 1} of ${demoPhotos.length} ❤️`;
+document.getElementById("beginMemoriesBtn")
+.addEventListener("click",()=>{
 
-document.getElementById("memoryCaption").innerHTML =
-demoCaptions[currentPhoto];
+journeyPage.style.display="none";
 
-const openLetterBtn = document.getElementById("openLetterBtn");
+memoryPage.style.display="flex";
 
-if(currentPhoto === demoPhotos.length - 1){
-
-    openLetterBtn.style.display = "block";
-
-}else{
-
-    openLetterBtn.style.display = "none";
-
-}
-        memoryImage.style.opacity = "1";
-
-    }, 150);
-
+if(bgMusic){
+bgMusic.play().catch(()=>{});
 }
 
 showPhoto();
 
-let startX = 0;
-let endX = 0;
-
-memoryImage.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
 });
 
-memoryImage.addEventListener("touchend", (e) => {
+// ----------------------
+// BACK
+// ----------------------
 
-    endX = e.changedTouches[0].clientX;
+document.getElementById("backToJourney")
+.addEventListener("click",()=>{
 
-    if (startX - endX > 80 && currentPhoto < demoPhotos.length - 1) {
-        currentPhoto++;
-        showPhoto();
-    }
+memoryPage.style.display="none";
 
-    if (endX - startX > 80 && currentPhoto > 0) {
-        currentPhoto--;
-        showPhoto();
-    }
+journeyPage.style.display="flex";
+
+if(bgMusic){
+bgMusic.pause();
+bgMusic.currentTime=0;
+}
 
 });
-const letterPage = document.getElementById("letterPage");
+
+// ----------------------
+// SHOW PHOTO
+// ----------------------
+
+function showPhoto(){
+
+memoryImage.src=demoPhotos[currentPhoto];
+
+memoryCount.innerHTML=
+`Memory ${currentPhoto+1} of ${demoPhotos.length} ❤️`;
+
+memoryCaption.innerHTML=
+demoCaptions[currentPhoto];
+
+if(currentPhoto===demoPhotos.length-1){
+
+openLetterBtn.style.display="block";
+
+}else{
+
+openLetterBtn.style.display="none";
+
+}
+
+}
+
+// ----------------------
+// SWIPE
+// ----------------------
+
+let startX=0;
+
+memoryImage.addEventListener("touchstart",(e)=>{
+
+startX=e.touches[0].clientX;
+
+});
+
+memoryImage.addEventListener("touchend",(e)=>{
+
+let endX=e.changedTouches[0].clientX;
+
+if(startX-endX>80 && currentPhoto<demoPhotos.length-1){
+
+currentPhoto++;
+
+showPhoto();
+
+}
+
+if(endX-startX>80 && currentPhoto>0){
+
+currentPhoto--;
+
+showPhoto();
+
+}
+
+});
+
+// ----------------------
+// LETTER PAGE
+// ----------------------
+
+const fullLetter = `
+Some people enter our lives...
+
+And change everything.
+
+Thank you for every smile.
+
+Thank you for every memory.
+
+Thank you for simply being you.
+
+No matter where life takes us...
+
+You'll always have a place inside my heart. ❤️
+`;
+
+function typeLetter(){
+
+    const letter=document.getElementById("letterText");
+
+    if(!letter) return;
+
+    letter.innerHTML="";
+
+    let i=0;
+
+    const typing=setInterval(()=>{
+
+        letter.innerHTML += fullLetter.charAt(i);
+
+        i++;
+
+        if(i>=fullLetter.length){
+
+            clearInterval(typing);
+
+        }
+
+    },35);
+
+}
 
 document.getElementById("openLetterBtn")
 .addEventListener("click",()=>{
@@ -383,15 +468,23 @@ document.getElementById("backToMemory")
     memoryPage.style.display="flex";
 
 });
-const envelope =
-document.getElementById("envelope");
 
-envelope.addEventListener("click",()=>{
+const envelope=document.getElementById("envelope");
 
-    envelope.classList.add("open");
+if(envelope){
 
-    setTimeout(()=>{
-        typeLetter();
-    },700);
+    envelope.addEventListener("click",()=>{
 
-});
+        envelope.classList.add("open");
+
+        setTimeout(()=>{
+
+            typeLetter();
+
+        },700);
+
+    });
+
+}
+
+
