@@ -353,6 +353,9 @@ bgMusic.currentTime=0;
 
 function showPhoto(){
 
+memoryImage.style.transform="scale(.92)";
+memoryImage.style.opacity="0";
+
 memoryImage.src=demoPhotos[currentPhoto];
 
 memoryCount.innerHTML=
@@ -360,6 +363,13 @@ memoryCount.innerHTML=
 
 memoryCaption.innerHTML=
 demoCaptions[currentPhoto];
+
+setTimeout(()=>{
+
+memoryImage.style.transform="scale(1)";
+memoryImage.style.opacity="1";
+
+},150);
 
 if(currentPhoto===demoPhotos.length-1){
 
