@@ -372,6 +372,24 @@ openLetterBtn.style.display="none";
 }
 
 }
+showPhoto();
+
+// AUTO SLIDER
+
+setInterval(() => {
+
+    if (memoryPage.style.display === "flex") {
+
+        if (currentPhoto < demoPhotos.length - 1) {
+
+            currentPhoto++;
+            showPhoto();
+
+        }
+
+    }
+
+}, 3000);
 
 // ----------------------
 // SWIPE
