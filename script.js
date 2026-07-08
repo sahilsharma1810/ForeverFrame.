@@ -80,6 +80,8 @@ const memoryPage=document.getElementById("memoryPage");
 
 const letterPage=document.getElementById("letterPage");
 
+const transitionPage = document.getElementById("transitionPage");
+
 // ----------------------
 // HOME
 // ----------------------
@@ -456,7 +458,15 @@ document.getElementById("openLetterBtn")
 
     memoryPage.style.display="none";
 
-    letterPage.style.display="flex";
+    transitionPage.style.display="flex";
+
+    setTimeout(()=>{
+
+        transitionPage.style.display="none";
+
+        letterPage.style.display="flex";
+
+    },2500);
 
 });
 
