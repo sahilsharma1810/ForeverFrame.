@@ -716,3 +716,22 @@ transition:.5s;
 transform:scale(1.3) rotate(12deg);
 opacity:.2;
 }
+#transitionPage{
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+width:100%;
+
+min-height:100vh;
+
+background:black;
+
+text-align:center;
+
+animation:fadeUp 1s ease;
+
+}
