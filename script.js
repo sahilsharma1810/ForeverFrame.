@@ -364,6 +364,9 @@ memoryCount.innerHTML=
 memoryCaption.innerHTML=
 demoCaptions[currentPhoto];
 
+document.getElementById("progressFill").style.width =
+((currentPhoto + 1) / demoPhotos.length) * 100 + "%";
+
 setTimeout(()=>{
 
 memoryImage.style.transform="scale(1)";
