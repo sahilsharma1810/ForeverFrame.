@@ -82,6 +82,9 @@ const letterPage=document.getElementById("letterPage");
 
 const transitionPage = document.getElementById("transitionPage");
 
+const countdownPage = document.getElementById("countdownPage");
+const countdownNumber = document.getElementById("countdownNumber");
+
 // ----------------------
 // HOME
 // ----------------------
